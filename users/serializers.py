@@ -55,7 +55,7 @@ class UserModelSerializer(serializers.ModelSerializer):
     #     return data
 
     def create(self, validated_data):
-        passwd = data['password']
+        passwd = validated_data['password']
         passwd_conf = validated_data.pop('password_confirmation')
         if passwd != passwd_conf:
             raise serializers.ValidationError("Passwords don´t match.")
