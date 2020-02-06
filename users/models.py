@@ -26,7 +26,11 @@ class User(CommonFields):
 
     amount_users = models.IntegerField()
 
-    country = models.CharField(max_length=35)
+    country = models.CharField(
+        max_length=35,
+        blank=True,
+        null=True
+    )
 
     cp = models.CharField(max_length=5)
 
